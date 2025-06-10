@@ -1,0 +1,114 @@
+import React, { useRef } from "react";
+import { useInView } from "../hooks/useInView";
+
+// Import gambar dari src/assets/images/
+import robotArmImage from "../assets/images/robot-arm.png";
+import laravelBlogImage from "../assets/images/laravel-blog.png";
+import ppdbSystemImage from "../assets/images/ppdb-system.png";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string; // Sekarang akan berisi path yang diimport
+}
+
+const Projects: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { threshold: 0.1 });
+
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: "4 DOF Robot Arm Control System",
+      description:
+        "A control system for 4-degree-of-freedom robotic arm with real-time movement control and position tracking.",
+      image: robotArmImage, // Menggunakan gambar yang diimport
+    },
+    {
+      id: 2,
+      title: "Project Blog Menggunakan Laravel",
+      description:
+        "A complete blog system with user authentication, post management, and comments functionality built with Laravel framework.",
+      image: laravelBlogImage,
+    },
+    {
+      id: 3,
+      title: "Website PPDB Menggunakan Python dan MongoDB",
+      description:
+        "A student admission system (PPDB) with registration, data processing, and reporting features using Python backend and MongoDB database.",
+      image: ppdbSystemImage,
+    },
+  ];
+
+  return (
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="py-20 sm:py-24 relative overflow-hidden"
+    >
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2
+            className={`text-3xl sm:text-4xl font-bold mb-4 transition-all duration-700 transform ${
+              isInView
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
+            My <span className="text-primary-500">Projects</span>
+          </h2>
+          <div
+            className={`w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto mb-8 transition-all duration-700 delay-100 ${
+              isInView ? "w-20 opacity-100" : "w-0 opacity-0"
+            }`}
+          ></div>
+          <p
+            className={`max-w-2xl mx-auto text-gray-700 dark:text-gray-300 transition-all duration-700 delay-200 ${
+              isInView ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Here are some of my recent projects that showcase my skills and
+            experience in web development.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-700 delay-${
+                400 + index * 100
+              } ${
+                isInView
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              <div className="relative overflow-hidden h-56">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={`w-full h-full object-contain transition-transform duration-700 group-hover:scale-105`}
+                  loading="lazy" // Optimasi loading
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
