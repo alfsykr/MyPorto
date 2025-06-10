@@ -5,12 +5,14 @@ import { useInView } from "../hooks/useInView";
 import robotArmImage from "../assets/images/robot-arm.png";
 import laravelBlogImage from "../assets/images/laravel-blog.png";
 import ppdbSystemImage from "../assets/images/ppdb-system.png";
+import cpuMonitoringImage from "../assets/images/cpu-monitoring.png";
+import intergreenWebsiteImage from "../assets/images/intergreen-website.png";
 
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: string; // Sekarang akan berisi path yang diimport
+  image: string;
 }
 
 const Projects: React.FC = () => {
@@ -22,22 +24,36 @@ const Projects: React.FC = () => {
       id: 1,
       title: "4 DOF Robot Arm Control System",
       description:
-        "A control system for 4-degree-of-freedom robotic arm with real-time movement control and position tracking.",
-      image: robotArmImage, // Menggunakan gambar yang diimport
+        "A control system for 4-degree-of-freedom robotic arm with real-time movement control and position tracking capabilities.",
+      image: robotArmImage,
     },
     {
       id: 2,
-      title: "Project Blog Menggunakan Laravel",
+      title: "Blog Project Using Laravel",
       description:
-        "A complete blog system with user authentication, post management, and comments functionality built with Laravel framework.",
+        "A complete blog system with user authentication, post management, and comments functionality built with Laravel framework and modern web technologies.",
       image: laravelBlogImage,
     },
     {
       id: 3,
-      title: "Website PPDB Menggunakan Python dan MongoDB",
+      title: "Student Admission System Using Python and MongoDB",
       description:
-        "A student admission system (PPDB) with registration, data processing, and reporting features using Python backend and MongoDB database.",
+        "A comprehensive student admission system (PPDB) with registration, data processing, and reporting features using Python backend and MongoDB database.",
       image: ppdbSystemImage,
+    },
+    {
+      id: 4,
+      title: "CPU and Room Temperature Monitoring System",
+      description:
+        "A real-time monitoring system that tracks CPU temperature using AIDA64 and room temperature using SHT20 sensor, providing comprehensive thermal monitoring for computer systems.",
+      image: cpuMonitoringImage,
+    },
+    {
+      id: 5,
+      title: "InterGreen Plant Store Landing Page",
+      description:
+        "A professional landing page for InterGreen plant store featuring plant data management with MySQL database, customer messaging system via email integration, and comprehensive plant catalog management.",
+      image: intergreenWebsiteImage,
     },
   ];
 
@@ -69,7 +85,7 @@ const Projects: React.FC = () => {
             }`}
           >
             Here are some of my recent projects that showcase my skills and
-            experience in web development.
+            experience in web development, IoT systems, and automation engineering.
           </p>
         </div>
 
@@ -89,8 +105,8 @@ const Projects: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`w-full h-full object-contain transition-transform duration-700 group-hover:scale-105`}
-                  loading="lazy" // Optimasi loading
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105`}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
               </div>
