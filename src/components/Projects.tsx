@@ -7,6 +7,7 @@ import laravelBlogImage from "../assets/images/laravel-blog.png";
 import ppdbSystemImage from "../assets/images/ppdb-system.png";
 import cpuMonitoringImage from "../assets/images/cpu-monitoring.png";
 import intergreenWebsiteImage from "../assets/images/intergreen-website.png";
+import moviesWebsiteImage from "../assets/images/movies-website.png";
 
 interface Project {
   id: number;
@@ -54,6 +55,13 @@ const Projects: React.FC = () => {
       description:
         "A professional landing page for InterGreen plant store featuring plant data management with MySQL database, customer messaging system via email integration, and comprehensive plant catalog management.",
       image: intergreenWebsiteImage,
+    },
+     {
+      id: 6,
+      title: "My Favorites Movies Website",
+      description:
+        "FavroitesMovies is a modern and responsive movie web application built using React. It features a clean UI that displays popular movies, allows users to add titles to their Watchlist or Favorites, and includes search functionality. ",
+      image: moviesWebsiteImage,
     },
   ];
 
