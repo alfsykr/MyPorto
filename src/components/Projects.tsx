@@ -8,6 +8,7 @@ import ppdbSystemImage from "../assets/images/ppdb-system.png";
 import cpuMonitoringImage from "../assets/images/cpu-monitoring.png";
 import intergreenWebsiteImage from "../assets/images/intergreen-website.png";
 import moviesWebsiteImage from "../assets/images/movies-website.png";
+import rfidImage from "../assets/images/RFID.png";
 
 interface Project {
   id: number;
@@ -21,6 +22,27 @@ const Projects: React.FC = () => {
   const isInView = useInView(sectionRef, { threshold: 0.1 });
 
   const projects: Project[] = [
+    {
+      id: 4,
+      title: "CPU and Room Temperature Monitoring System",
+      description:
+        "A real-time monitoring system that tracks CPU temperature using AIDA64 and room temperature using SHT20 sensor, providing comprehensive thermal monitoring for computer systems.",
+      image: cpuMonitoringImage,
+    },
+    {
+      id: 6,
+      title: "My Favorites Movies Website",
+      description:
+        "FavroitesMovies is a modern and responsive movie web application built using React. It features a clean UI that displays popular movies, allows users to add titles to their Watchlist or Favorites, and includes search functionality. ",
+      image: moviesWebsiteImage,
+    },
+    {
+      id: 0,
+      title: "RFID-based Library Web App",
+      description:
+        "A web application for library management using RFID technology. The system allows users to borrow books by tapping their RFID cards. The UID of the book and the member's card are read via RFID, then the data is sent to Firebase for real-time processing and storage. This enables efficient, contactless book borrowing and member management.",
+      image: rfidImage,
+    },
     {
       id: 1,
       title: "4 DOF Robot Arm Control System",
@@ -43,25 +65,11 @@ const Projects: React.FC = () => {
       image: ppdbSystemImage,
     },
     {
-      id: 4,
-      title: "CPU and Room Temperature Monitoring System",
-      description:
-        "A real-time monitoring system that tracks CPU temperature using AIDA64 and room temperature using SHT20 sensor, providing comprehensive thermal monitoring for computer systems.",
-      image: cpuMonitoringImage,
-    },
-    {
       id: 5,
       title: "InterGreen Plant Store Landing Page",
       description:
         "A professional landing page for InterGreen plant store featuring plant data management with MySQL database, customer messaging system via email integration, and comprehensive plant catalog management.",
       image: intergreenWebsiteImage,
-    },
-     {
-      id: 6,
-      title: "My Favorites Movies Website",
-      description:
-        "FavroitesMovies is a modern and responsive movie web application built using React. It features a clean UI that displays popular movies, allows users to add titles to their Watchlist or Favorites, and includes search functionality. ",
-      image: moviesWebsiteImage,
     },
   ];
 

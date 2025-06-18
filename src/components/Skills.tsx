@@ -26,6 +26,7 @@ const Skills: React.FC = () => {
     { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
     { name: 'Flask', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
     { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
     { name: 'IoT', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg' },
     { name: 'Monitoring', icon: 'https://logowik.com/content/uploads/images/black-monitoring803.logowik.com.webp' },
     { name: 'Wiring', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEurRO7jHmyBh_2VURcTg1mQ8YxalwVu-stQ&s' },
